@@ -1,0 +1,82 @@
+{% load static %}
+
+<!-- ========== MOBILE MENU ========== -->
+<nav id="mobile-menu"></nav>
+<!-- ========== TOP MENU ========== -->
+<div class="topbar gradient">
+    <div class="container">
+        <div class="welcome-mssg">
+            Yeşiloba Mah. Metal San.Sit. 46253 Sok. No:5/A
+            Seyhan-Adana
+        </div>
+        <div class="top-right-menu">
+            <ul class="top-menu">
+                <li class="d-none d-md-inline">
+                    <a href="tel:+18881234567">
+                        <i class="fa fa-phone"></i> +90 507 749 80 35
+                    </a>
+                </li>
+                <li class="d-none d-md-inline">
+                    <a href="mailto:contact@hotelhimara.com">
+                        <i class="fa fa-envelope-o "></i>info@artechmakine.com</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<header class="horizontal-header sticky-header" data-menutoggle="991">
+    <div class="container">
+        <!-- BRAND -->
+        <div class="brand">
+            <div class="logo">
+                <a href="" class="first-logo big-logo">
+                    <img src="{% static 'images/logo.svg'%}" alt="Artech Makine">
+                </a>
+                <a href="index.html" class="second-logo mobile-logo">
+                    <img src="{% static 'images/logo.svg' %}" alt="Artech Makine">
+                </a>
+            </div>
+        </div>
+        <!-- MOBILE MENU BUTTON -->
+        <div id="toggle-menu-button" class="toggle-menu-button">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <!-- MAIN MENU -->
+        <nav id="main-menu" class="main-menu">
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="">Ana Sayfa</a>
+                </li>
+                {% for category in categories %}
+                <li class="menu-item dropdown">
+                    <a href="{% url 'product:product_list' category.slug %}">{{ category.name }}</a>
+                    {% if category.children.exists %}
+                    <ul class="submenu">
+                        {% for child_category in category.children.all %}
+                        <li class="menu-item dropdown">
+                            <a href="{% url 'product:product_list' child_category.slug %}">{{child_category.name}}</a>
+                            {% if category.children.exists %}
+                            <ul class="submenu">
+                                {% for sub_category in child_category.children.all %}
+                                <li class="menu-item">
+                                    <a href="{% url 'product:product_list' sub_category.slug %}">{{ sub_category.name}}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+
+            </ul>
+        </nav>
+    </div>
+</header>

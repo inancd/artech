@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+    
+{% block wrapper%}
+<!-- ========== PAGE TITLE ========== -->
+<div class="page-title grey">
+    <div class="container">
+        <div class="inner">
+            <h1>{{ category.name}}</h1>
+            <ol class="breadcrumb">
+                {% for catbread in breadcrumb %}
+                <li>
+                    <a href="{% url 'product:product_list' category.slug %}">{{ catbread.name }}</a>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- ========== MAIN ========== -->
+<main class="shop-page">
+    <div class="container">
+        <div class="row">
+            <!-- ITEM -->
+            {% if not articles%}
+            <p>Bu Sayfada Ürün Bulunmamaktadır.</p>
+            {% else %}
+            {{articles.image.images.url}}
+            {% for article in articles %}
+            <div class="col-md-3 col-sm-6">
+                <div class="shop-item">
+                    <figure class="color-overlay-hover">
+                        
+                        <a href="">
+                            {% for image in article.images.all%}
+                            {% if image.is_feature %}
+                            <img src="{{image.image.url}}"
+                                class="img-fluid" alt="Image">
+                            {% endif %}
+                            {% endfor %}
+                        </a> 
+                        
+                        <a href="{% url 'product:product_detail' article.slug%}" class="btn btn-sm add-to-cart">
+                           Ürünü İncele</a>
+                    </figure>
+                    <div class="product-details">
+                        <div class="product-price">{{article.stock_code}}</div>
+                        <h4 class="product-title">
+                            <a href="#">{{article.name}}</a>
+                        </h4>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <!--<div class="load-more">
+    LOAD MORE PRODUCTS
+  </div>-->
+        </div>
+</main>
+
+<a href="">test</a>
+
+{% endblock%}
