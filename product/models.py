@@ -34,6 +34,7 @@ class Product(models.Model):
     slug = models.CharField(max_length=250)
     stock_code = models.CharField(max_length=100)
     publish_date = models.DateTimeField(default=timezone.now)
+    regular_price = models.DecimalField(max_digits=10, decimal_places=2)
     detail = models.TextField(null=True)
     status = models.CharField(max_length=10, choices=options, default='taslak')
 
