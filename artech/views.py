@@ -1,6 +1,9 @@
 from django.shortcuts import render
 
+from product.models import ProductCategory
+
 
 def homePage(request):
-    return render(request, 'index.html')
+    categories = ProductCategory.objects.filter(parent=None)
+    return render(request, 'index.html', {'categories': categories})
 
