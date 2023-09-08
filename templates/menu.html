@@ -32,10 +32,10 @@
         <!-- BRAND -->
         <div class="brand">
             <div class="logo">
-                <a href="" class="first-logo big-logo">
+                <a href="{% url 'home' %}" class="first-logo big-logo">
                     <img src="{% static 'images/logo.png'%}" alt="Artech Makine">
                 </a>
-                <a href="index.html" class="second-logo mobile-logo">
+                <a href="{% url 'home' %}" class="second-logo mobile-logo">
                     <img src="{% static 'images/logo.png' %}" alt="Artech Makine">
                 </a>
             </div>
@@ -50,7 +50,7 @@
         <nav id="main-menu" class="main-menu">
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="">Ana Sayfa</a>
+                    <a href="{% url 'home' %}">Ana Sayfa</a>
                 </li>
                 {% for category in categories %}
                 <li class="menu-item dropdown">

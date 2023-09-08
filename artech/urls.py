@@ -20,6 +20,8 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from artech import views
 
+app_name = 'home'
+
 urlpatterns = [
     path('', views.homePage, name='home'),
     path('admin/', admin.site.urls),
