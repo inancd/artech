@@ -1,8 +1,31 @@
 {% extends 'base.html' %}
-{% block title %}Artech Ürün Sayfası{% endblock  %}
-
+{% block title %}Artech Makine{% endblock %}
 
 
 {% block wrapper %}
-   
-{% endblock  %}
+{% load static %}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Slider içeriği burada olacak -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/slider1.jpg'%}" alt="" class="artech-slide">
+        </div>
+       <!-- <div class="carousel-item">
+            <img src="image2.jpg" alt="Resim 2">
+        </div>
+    </div>--->
+    
+    <!-- Carousel kontrol düğmeleri -->
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Önceki</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Sonraki</span>
+    </a>
+</div>
+
+
+{% endblock %}

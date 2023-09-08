@@ -1959,6 +1959,10 @@ header.mm-slideout {
   right: 8px;
 }
 
+.artech-slide {
+  width: 100%;
+}
+
 header.transparent-header {
   position: absolute;
   top: 70px;
@@ -1996,7 +2000,7 @@ header .brand .logo .mobile-logo {
 }
 
 header .brand .big-logo {
-  position: absolute;
+  
   top: 0;
 }
 
@@ -2079,7 +2083,7 @@ header.horizontal-header .main-menu .menu .menu-item a, header.horizontal-header
   position: relative;
   display: block;
   padding: 28px 20px;
-  color: #a4a4a4;
+  color: #343a40;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;

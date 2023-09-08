@@ -28,8 +28,7 @@ TEMPLATE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = os.environ.get('DEBUG') 
 
 # Application definition
 

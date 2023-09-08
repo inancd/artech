@@ -18,8 +18,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from artech import views
 
 urlpatterns = [
+    path('', views.homePage, name='home'),
     path('admin/', admin.site.urls),
     path('urun/', include('product.urls', namespace='product')),  
 ]
