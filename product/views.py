@@ -8,9 +8,19 @@ def productAll(request):
 
 def productDetail(request, slug):
     product = get_object_or_404(Product, slug=slug)
+    main_image = product.images.filter(is_feature=True).first()
+    other_images = product.images.exclude(is_feature=False)
     categories = ProductCategory.objects.filter(parent=None)
+    context = {
+        'product': product,
+        'main_image': main_image,
+        'other_images': other_images,
+        'categories': categories,
+        
+
+    }
     
-    return render(request, 'product/product_detail.html', {'product': product, 'categories': categories})
+    return render(request, 'product/product_detail.html', context)
 
 
 def category(request):
