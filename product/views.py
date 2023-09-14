@@ -8,13 +8,11 @@ def productAll(request):
 
 def productDetail(request, slug):
     product = get_object_or_404(Product, slug=slug)
-    main_image = product.images.filter(is_feature=True).first()
-    other_images = product.images.exclude(is_feature=False)
+    main_image = product.images.all()
     categories = ProductCategory.objects.filter(parent=None)
     context = {
         'product': product,
         'main_image': main_image,
-        'other_images': other_images,
         'categories': categories,
         
 
