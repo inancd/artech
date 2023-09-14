@@ -13,8 +13,7 @@ def productDetail(request, slug):
     context = {
         'product': product,
         'main_image': main_image,
-        'categories': categories,
-        
+        'categories': categories,    
 
     }
     

@@ -26,7 +26,7 @@ class ProductCategory(MPTTModel):
 
 
 class ProductBrand(models.Model):
-    brand_name = models.CharField(max_length=255)
+    brand_name = models.CharField(max_length=255, blank=True)
     image = models.ImageField(upload_to='product_images/', default='images/default.jpg')
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Product(models.Model):
         ('yayınla', 'Yayınla')
     )
     category = models.ForeignKey(ProductCategory, related_name='product', on_delete=models.CASCADE)
-    brand = models.ForeignKey(ProductBrand, related_name='brand', on_delete=models.CASCADE)
+    brand = models.ForeignKey(ProductBrand, related_name='brand', on_delete=models.CASCADE, blank=True)
     name = models.CharField(max_length=250)
     slug = models.CharField(max_length=250)
     stock_code = models.CharField(max_length=100)
