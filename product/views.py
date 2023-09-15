@@ -10,7 +10,7 @@ def productDetail(request, slug):
     product = get_object_or_404(Product, slug=slug)
     main_image = product.images.all()
     categories = ProductCategory.objects.filter(parent=None)
-    similar_products = Product.objects.filter(category=product.category).exclude(pk=product.pk)[:7]
+    similar_products = Product.objects.filter(category=product.category).exclude(pk=product.pk)[:4]
     context = {
         'product': product,
         'main_image': main_image,
