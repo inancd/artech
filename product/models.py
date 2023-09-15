@@ -38,7 +38,7 @@ class Product(models.Model):
         ('yayınla', 'Yayınla')
     )
     category = models.ForeignKey(ProductCategory, related_name='product', on_delete=models.CASCADE)
-    brand = models.ForeignKey(ProductBrand, related_name='brand', on_delete=models.CASCADE)
+    brand = models.ForeignKey(ProductBrand, related_name='brand', on_delete=models.CASCADE, blank=True)
     name = models.CharField(max_length=250)
     slug = models.CharField(max_length=250)
     stock_code = models.CharField(max_length=100)

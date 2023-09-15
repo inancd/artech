@@ -221,6 +221,7 @@
                 </div>
                 <div class="row">
                     <!-- ITEM -->
+                    {% for similar_product in similar_products%}
                     <div class="col-md-3">
                         <div class="shop-item">
                             <figure class="color-overlay-hover">
@@ -232,66 +233,14 @@
                             </figure>
                             <div class="product-details">
                                 <h4 class="product-title">
-                                    <a href="#">Yerli</a>
+                                    <a href="#">{{ similar_product.brand}}</a>
                                 </h4>
-                                <div class="product-price">D-max Hava Yastığı Tavan Airbag Sol 2020</div>
+                                <div class="product-price">{{ similar_product.name }}</div>
                             </div>
                         </div>
                     </div>
-                    <!-- ITEM -->
-                    <div class="col-md-3">
-                        <div class="shop-item">
-                            <figure class="color-overlay-hover">
-                                <a href="#">
-                                    <img src="../../images/kategoriler/isuzu/d-max-airbag-tavan-2020-sol.jpg"
-                                        class="img-fluid" alt="Image">
-                                </a>
-                                <button class="btn btn-sm add-to-cart">Ürünü İncele</button>
-                            </figure>
-                            <div class="product-details">
-                                <h4 class="product-title">
-                                    <a href="#">Yerli</a>
-                                </h4>
-                                <div class="product-price">D-max Hava Yastığı Tavan Airbag Sol 2020</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ITEM -->
-                    <div class="col-md-3">
-                        <div class="shop-item">
-                            <figure class="color-overlay-hover">
-                                <a href="#">
-                                    <img src="../../images/kategoriler/isuzu/d-max-airbag-tavan-2020-sol.jpg"
-                                        class="img-fluid" alt="Image">
-                                </a>
-                                <button class="btn btn-sm add-to-cart">Ürünü İncele</button>
-                            </figure>
-                            <div class="product-details">
-                                <h4 class="product-title">
-                                    <a href="#">Yerli</a>
-                                </h4>
-                                <div class="product-price">D-max Hava Yastığı Tavan Airbag Sol 2020</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ITEM -->
-                    <div class="col-md-3">
-                        <div class="shop-item">
-                            <figure class="color-overlay-hover">
-                                <a href="#">
-                                    <img src="../../images/kategoriler/isuzu/d-max-airbag-tavan-2020-sol.jpg"
-                                        class="img-fluid" alt="Image">
-                                </a>
-                                <button class="btn btn-sm add-to-cart">Ürünü İncele</button>
-                            </figure>
-                            <div class="product-details">
-                                <h4 class="product-title">
-                                    <a href="#">Yerli</a>
-                                </h4>
-                                <div class="product-price">D-max Hava Yastığı Tavan Airbag Sol 2020</div>
-                            </div>
-                        </div>
-                    </div>
+                   {% endfor %}
+                    
                 </div>
             </div>
         </div>
